@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = [f"https://{host}" for host in ALLOWED_HOSTS if host not in ["", "localhost", "127.0.0.1"]]
+CSRF_TRUSTED_ORIGINS = ["https://women-safety-webapp-vmhz.onrender.com", "localhost", "127.0.0.1"]
 
 CSRF_COOKIE_SECURE = True
 
