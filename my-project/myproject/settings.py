@@ -20,6 +20,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,9 +33,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
-    "https://women-safety-webapp-vmhz.onrender.com",
+    "women-safety-webapp-vmhz.onrender.com",
     "localhost",
-    "127.0.0.1"
+    "127.0.0.1",
 ]
 
 
@@ -52,8 +53,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -62,8 +63,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://women-safety-webapp-vmhz.onrender.com", "localhost", "127.0.0.1"]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://women-safety-webapp-vmhz.onrender.com",
+    "http://localhost",
+    "http://127.0.0.1",
+]
 CSRF_COOKIE_SECURE = True
 
 ROOT_URLCONF = 'myproject.urls'
