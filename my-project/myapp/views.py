@@ -40,9 +40,7 @@ def panic_button_view(request):
 def panic_button(request):
     if request.method == 'POST':
         # Twilio configuration
-        account_sid = 'AC444e3d7a8ceb84ad0633952bd1891cf4'
-        auth_token = 'ae7057fa88eb1dce09180a8d6bd1a89f'
-        client = Client(account_sid, auth_token)
+        client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 
         # Fixed number to send the alert
         fixed_number = '+917017371076'  # Replace with the actual number
@@ -53,7 +51,7 @@ def panic_button(request):
         # Sending the SMS
         client.messages.create(
             body=message_body,
-            from_='+17752959985',  # Your Twilio number
+            from_=settings.TWILIO_PHONE_NUMBER,  # Your Twilio number
             to=fixed_number
         )
 
