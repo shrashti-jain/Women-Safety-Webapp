@@ -23,7 +23,7 @@ def panic_button_view(request):
         client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 
         # Fixed number to send the alert
-        fixed_number = '+917017371076'  # Replace with the actual number
+        fixed_number = settings.TWILIO_RECEIVER_NUMBER  # Replace with the actual number
 
         message = client.messages.create(
         body="I am in emergency! Need help my location is https://maps.google.com/?q=27.6033411,77.5955222",
