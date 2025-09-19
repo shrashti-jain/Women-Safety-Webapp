@@ -42,13 +42,14 @@ This project was developed as part of the **Smart India Hackathon (SIH)**, where
 ---
 
 ## 📂 Project Structure
-women-safety-webapp/
-│── templates/ # HTML files
-│── static/ # CSS, JS, Images
-│── safety/ # Django app with features
-│── db.sqlite3 # Database
-│── manage.py # Django entry point
-
+   ```
+   women-safety-webapp/
+     │── templates/ # HTML files
+     │── static/ # CSS, JS, Images
+     │── safety/ # Django app with features
+     │── db.sqlite3 # Database
+     │── manage.py # Django entry point
+```
 
 ---
 
